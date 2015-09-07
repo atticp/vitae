@@ -1,1 +1,1 @@
-angular.module('vitae', ['vitae.templates', 'vitae.keySkills', 'vitae.interests', 'vitae.timeline', 'vitae.social']);
+angular.module('vitae', ['vitae.templates', 'vitae.keySkills', 'vitae.interests', 'vitae.timeline', 'vitae.nameHeader']);

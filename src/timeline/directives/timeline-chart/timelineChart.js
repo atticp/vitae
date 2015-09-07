@@ -1,6 +1,6 @@
 angular.module('vitae.timeline')
-    .directive('vitaeTimelineChart', ['$window', '$timeout', '$filter', 'd3Service', 'd3UtilsService',
-                                     function ($window, $timeout, $filter, d3Service, d3UtilsService) {
+    .directive('vitaeTimelineChart', ['$window', '$filter', 'd3Service', 'd3UtilsService',
+                                     function ($window, $filter, d3Service, d3UtilsService) {
             return {
                 restrict: 'E',
                 scope: {
