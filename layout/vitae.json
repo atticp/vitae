@@ -1,0 +1,89 @@
+{
+    "name": "John Doe",
+    "phone": "+441234567890",
+    "email": "j.doe@xxxxxx.com",
+    "address": "00 Road, Town, County, PostCode",
+    "description": "A description of John Doe goes here.",
+    "keyskills": [
+       "Key Skill 1",
+       "Key Skill 2",
+       "Key Skill 3",
+       "Key Skill 4"
+   ],
+    "experience": [
+        {
+            "type": "work",
+            "company": "Current Company",
+            "position": "Worker",
+            "startdate": "2013-01-01",
+            "enddate": "",
+            "skills": [
+                "Skill 1",
+                "Skill 2",
+                "Skill 3"
+            ]
+        },
+        {
+            "type": "work",
+            "company": "Previous Company",
+            "position": "Worker",
+            "startdate": "2011-05-01",
+            "enddate": "2013-01-01",
+            "skills": [
+                "Skill A",
+                "Skill B",
+                "Skill C"
+            ]
+        },
+        {
+            "type": "education",
+            "company": "University",
+            "position": "Degree Subject",
+            "startdate": "2003-09-01",
+            "enddate": "2006-06-01",
+            "skills": [
+            "Degree grade in Degree"
+         ]
+      },
+        {
+            "type": "education",
+            "company": "Secondary School",
+            "startdate": "1996-09-01",
+            "enddate": "2003-06-01",
+            "skills": [
+                "A2 Grades",
+                "AS Grades",
+                "GCSE Grades"
+         ]
+      },
+        {
+            "type": "voluntary",
+            "startdate": "2003-08-01",
+            "enddate": "",
+            "company": "Voluntary Work",
+            "position": "Voluntary Worker",
+            "skills": [
+                "Skill X",
+                "Skill Y",
+                "Skill Z"
+         ]
+      }
+   ],
+    "interests": [
+        {
+            "title": "Interest 1",
+            "img": "glyphicons_329_soccer_ball.png",
+            "score": 70
+      },
+        {
+            "title": "Interest 2",
+            "img": "glyphicons_314_table_tennis.png",
+            "score": 80
+      },
+        {
+            "title": "Interest 3",
+            "img": "glyphicons_234_brush.png",
+            "score": 60
+      }
+   ]
+}

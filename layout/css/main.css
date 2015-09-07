@@ -1,0 +1,58 @@
+html {
+    background-color: #fff;
+}
+
+body {
+    margin: 0 auto;
+    padding: 2em 2em 4em;
+    max-width: 800px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5em;
+    color: #444;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.06);
+}
+
+.header {
+    font-family: "Open Sans Condensed", sans-serif;
+    background-color: #666;
+    padding: 0em 0 0.5em 0;
+    margin: auto;
+    text-align: center;
+    color: #ddd;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #ddd;
+    font-family: "Open Sans Condensed", sans-serif;
+    font-weight: 300;
+    line-height: 1.2em;
+}
+
+h1 {
+    font-size: 52px;
+}
+
+h2 {
+    font-size: 32px;
+    color: #666;
+    border-bottom: 2px;
+    border-bottom-color: #FFA347;
+    border-bottom-style: solid;
+}
+
+.header blockquote {
+    font-size: 22px;
+    font-style: italic;
+}
+
+.header p {
+    font-size: 18px;
+    line-height: 1.6em;
+}

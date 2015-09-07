@@ -1,0 +1,1 @@
+angular.module('vitae', ['vitae.templates', 'vitae.keySkills', 'vitae.interests', 'vitae.timeline', 'vitae.social']);

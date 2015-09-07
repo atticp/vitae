@@ -1,0 +1,102 @@
+@color-education: #B4DA45;
+@color-work: #FFA347;
+@color-voluntary: #AAC6FF;
+@color-shadow: #CCC;
+svg text {
+    fill: #444;
+}
+
+svg line.axis {
+    fill: none;
+    stroke: #aaa;
+    stroke-width: 5;
+}
+
+svg>g>line {
+    fill: none;
+    stroke: #999;
+    stroke-width: 5;
+}
+
+svg>g>circle {
+    fill: white;
+    stroke: #999;
+    stroke-width: 5;
+}
+
+svg>g.work>line,
+svg>g.work>circle {
+    stroke: @color-work;
+}
+
+svg>g.education>line,
+svg>g.education>circle {
+    stroke: @color-education;
+}
+
+svg>g.voluntary>line,
+svg>g.voluntary>circle {
+    stroke: @color-voluntary;
+}
+
+svg>g>rect.item-title {
+    fill: #999;
+    stroke: none;
+}
+
+svg>g.work>rect.item-title {
+    fill: @color-work;
+}
+
+svg>g.education>rect.item-title {
+    fill: @color-education;
+}
+
+svg>g.voluntary>rect.item-title {
+    fill: @color-voluntary;
+}
+
+svg>g> .item-title-shadow {
+    fill: @color-shadow;
+    stroke: none;
+}
+
+svg .key-item-work {
+    fill: @color-work;
+}
+
+svg .key-item-education {
+    fill: @color-education;
+}
+
+svg .key-item-voluntary {
+    fill: @color-voluntary;
+}
+
+svg .key-text {
+    font-family: "Open Sans Condensed", sans-serif;
+    font-weight: 300;
+    font-size: 22px;
+    text-anchor: middle;
+    text-transform: capitalize;
+}
+
+svg .duration {
+    font-family: "Open Sans Condensed", sans-serif;
+    font-weight: 300;
+    font-size: 32px;
+}
+
+svg .company {
+    font-family: "Open Sans Condensed", sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+    text-anchor: end;
+}
+
+svg .position {
+    font-family: "Open Sans Condensed", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    text-anchor: end;
+}
