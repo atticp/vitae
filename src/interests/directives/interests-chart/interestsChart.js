@@ -17,19 +17,19 @@ angular.module('vitae.interests')
                             barPadding = parseInt(attrs.barPadding, 10) || 5;
 
                         // Browser onresize event
-                        window.onresize = function () {
+                        $window.onresize = function () {
                             scope.$apply();
                         };
 
                         // Watch for resize event
                         scope.$watch(function () {
-                            return angular.element(window)[0].innerWidth;
+                            return angular.element($window)[0].innerWidth;
                         }, function () {
                             scope.render(scope.data);
                         });
 
                         // watch for data changes and re-render
-                        scope.$watch('data', function (newVals, oldVals) {
+                        scope.$watch('data', function (newVals) {
                             return scope.render(newVals);
                         }, true);
 
@@ -43,8 +43,7 @@ angular.module('vitae.interests')
                             }
 
                             // setup variables
-                            var width = d3.select(ele[0]).node().offsetWidth - margin,
-                                height = scope.data.length * (barHeight + barPadding),
+                            var height = scope.data.length * (barHeight + barPadding),
                                 axisXPos = Math.round(margin / 2) + 15,
                                 color = d3.scale.ordinal().range(["#FFA347", "#B4DA45", "#AAC6FF"]),
                                 defs = svg.append('defs');
@@ -79,14 +78,12 @@ angular.module('vitae.interests')
                                 .append('text')
                                 .attr('fill', '#333')
                                 .attr('alignment-baseline', 'middle')
-                                .attr('y', function (d, i) {
-                                    return barHeight / 2 + 2;
-                                })
+                                .attr('y', barHeight / 2 + 2)
                                 .attr('x', axisXPos + 40)
                                 .text(function (d) {
                                     return d.title;
                                 })
-                                .each(function (d) {
+                                .each(function () {
                                     var textBBox = this.getBBox();
                                     var width = textBBox.x + textBBox.width + barHeight + 18;
                                     d3.select(this.previousSibling)
@@ -108,7 +105,7 @@ angular.module('vitae.interests')
                                 })
                                 .attr('height', barHeight - 4)
                                 .attr('width', barHeight - 4)
-                                .attr('x', function (d, i) {
+                                .attr('x', function () {
                                     var textBBox = this.previousSibling.getBBox();
                                     return textBBox.x + textBBox.width + 15;
                                 })

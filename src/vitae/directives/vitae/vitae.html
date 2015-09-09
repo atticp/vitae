@@ -1,8 +1,11 @@
 <div class="header">
     <vitae-name-header data="data"></vitae-name-header>
-    <p><img src="images/glyphicons_020_home.png" height=16/> {{data.address}}
-        <br/><img src="images/glyphicons_163_iphone.png" height=16/> {{data.phone}}
-        <br/><img src="images/glyphicons_010_envelope.png" height=13/> {{data.email}}
+    <p>
+        <vitae-address address="data.address"></vitae-address>
+        <br/>
+        <vitae-phone phone="data.phone"></vitae-phone>
+        <br/>
+        <vitae-email email="data.email"></vitae-email>
     </p>
 </div>
 <vitae-key-skills data="data.keyskills"></vitae-key-skills>

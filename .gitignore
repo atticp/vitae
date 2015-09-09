@@ -1,7 +1,8 @@
 # Build folders #
 #################
-dist/
 node_modules/
+assets/
+build/
 
 
 # Compiled source #

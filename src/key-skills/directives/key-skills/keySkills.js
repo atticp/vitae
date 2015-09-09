@@ -2,7 +2,7 @@ angular.module('vitae.keySkills')
     .directive('vitaeKeySkills', function () {
         return {
             restrict: 'E',
-            templateUrl: 'key-skills.html',
+            templateUrl: 'keySkills.html',
             scope: {
                 data: '='
             },

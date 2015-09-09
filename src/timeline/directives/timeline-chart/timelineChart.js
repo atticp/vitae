@@ -16,19 +16,19 @@ angular.module('vitae.timeline')
                             padding = parseInt(attrs.padding, 10) || 10;
 
                         // Browser onresize event
-                        window.onresize = function () {
+                        $window.onresize = function () {
                             scope.$apply();
                         };
 
                         // Watch for resize event
                         scope.$watch(function () {
-                            return angular.element(window)[0].innerWidth;
+                            return angular.element($window)[0].innerWidth;
                         }, function () {
                             scope.render(scope.data);
                         });
 
                         // watch for data changes and re-render
-                        scope.$watch('data', function (newVals, oldVals) {
+                        scope.$watch('data', function (newVals) {
                             return scope.render(newVals);
                         }, true);
 
@@ -71,7 +71,7 @@ angular.module('vitae.timeline')
                                     };
 
                                 items.each(function (d, i) {
-                                    d3.select(this).attr('transform', function (d) {
+                                    d3.select(this).attr('transform', function () {
                                         return 'translate(0,' + getItemYPos(i) + ')';
                                     });
                                 });
@@ -101,7 +101,7 @@ angular.module('vitae.timeline')
                                         return 'key-item ' + d;
                                     })
                                     .property('active', true)
-                                    .on("click", function (d, i) {
+                                    .on("click", function (d) {
                                         var active = this.active ? false : true;
                                         d3.selectAll("g.timelineItem." + d.replace(/\s+/g, ''))
                                             .transition()
@@ -276,8 +276,14 @@ angular.module('vitae.timeline')
 
                                 skills
                                     .append('text')
-                                    .each(function (d, i) {
-                                        d3UtilsService.wrapSVGText(d3.select(this), d, 10, 5, 85, 20);
+                                    .each(function (d) {
+                                        d3UtilsService.wrapSVGText(d3.select(this), {
+                                            caption: d,
+                                            x: 10,
+                                            y: 5,
+                                            maxChars: 85,
+                                            lineHeight: 20
+                                        });
                                     });
 
                                 skills.append('circle')

@@ -11,7 +11,7 @@ var runSequence = require('run-sequence');
 
 gulp.task('clean', function () {
     return del([
-      'dist/**/*'
+      'build/**/*'
   ]);
 });
 
@@ -19,7 +19,7 @@ gulp.task('less', function () {
     return gulp.src('src/**/*.less')
         .pipe(concat('vitae.less'))
         .pipe(less())
-        .pipe(gulp.dest('dist/css'));
+        .pipe(gulp.dest('build/release/css'));
 });
 
 gulp.task('templates', function () {
@@ -37,7 +37,7 @@ gulp.task('js', ['templates'], function () {
     return gulp.src(['src/**/module.js', 'src/**/*.js'])
         .pipe(concat('vitae.js'))
         .pipe(wrap('(function(){\n"use strict";\n<%= contents %>\n})();'))
-        .pipe(gulp.dest('dist/js'));
+        .pipe(gulp.dest('build/release/js'));
 });
 
 gulp.task('js-min', ['js'], function () {
@@ -45,12 +45,12 @@ gulp.task('js-min', ['js'], function () {
         .pipe(rename('vitae.min.js'))
         .pipe(ngAnnotate())
         .pipe(uglify())
-        .pipe(gulp.dest('dist/js'));
+        .pipe(gulp.dest('build/release/js'));
 });
 
 gulp.task('layout', function () {
     gulp.src('layout/**/*.*')
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('build/release/'));
 });
 
 gulp.task('build', ['js-min', 'less', 'layout']);

@@ -1,1 +1,1 @@
-angular.module('vitae.keySkills', []);
+angular.module('vitae.keySkills', ['vitae.templates']);

@@ -1,1 +1,1 @@
-angular.module('vitae.nameHeader', ['d3']);
+angular.module('vitae.nameHeader', ['d3', 'vitae.templates']);

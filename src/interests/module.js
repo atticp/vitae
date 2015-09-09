@@ -1,1 +1,1 @@
-angular.module('vitae.interests', ['d3']);
+angular.module('vitae.interests', ['d3', 'vitae.templates']);

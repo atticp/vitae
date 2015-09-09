@@ -6,29 +6,26 @@ angular.module('vitae.nameHeader')
                 scope: {
                     data: "="
                 },
-                link: function (scope, ele, attrs) {
+                link: function (scope, ele) {
                     d3Service.d3().then(function (d3) {
                         var svg = d3.select(ele[0])
                             .append('svg')
-                            .style('width', '100%'),
-
-                            margin = parseInt(attrs.margin, 10) || 20,
-                            padding = parseInt(attrs.padding, 10) || 10;
+                            .style('width', '100%');
 
                         // Browser onresize event
-                        window.onresize = function () {
+                        $window.onresize = function () {
                             scope.$apply();
                         };
 
                         // Watch for resize event
                         scope.$watch(function () {
-                            return angular.element(window)[0].innerWidth;
+                            return angular.element($window)[0].innerWidth;
                         }, function () {
                             scope.render(scope.data);
                         });
 
                         // watch for data changes and re-render
-                        scope.$watch('data', function (newVals, oldVals) {
+                        scope.$watch('data', function (newVals) {
                             return scope.render(newVals);
                         }, true);
 
@@ -80,8 +77,14 @@ angular.module('vitae.nameHeader')
                             svg
                                 .append('text')
                                 .attr('class', 'vitae-header-description')
-                                .each(function (d) {
-                                    d3UtilsService.wrapSVGText(d3.select(this), data.description, width / 2, 115, 90, 24);
+                                .each(function () {
+                                    d3UtilsService.wrapSVGText(d3.select(this), {
+                                        caption: data.description,
+                                        x: width / 2,
+                                        y: 115,
+                                        maxChars: 90,
+                                        lineHeight: 24
+                                    });
                                 });
 
                         };
