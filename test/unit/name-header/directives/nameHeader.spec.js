@@ -69,7 +69,8 @@
             });
         });
 
-        describe('vitaeNameHeader directive', function () {
+        // No Data Tests
+        describe('vitaeNameHeader directive', function () {            
             var element, $scope, $q, $window;
             beforeEach(module('vitae.nameHeader'));
             beforeEach(module(function ($provide) {

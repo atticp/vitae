@@ -59,7 +59,7 @@
 
             it('should draw a g element for each data item', function () {
                 var chartInterests = element.find('svg g.interest');
-                expect(chartInterests.length).toBe(testData.length);
+                expect(chartInterests.length).toBe(3);
             });
 
             it('should draw a rect in the g for each data item', function () {
@@ -100,6 +100,7 @@
             });
         });
 
+        // No Data Tests
         describe('vitaeInterestsChart directive', function () {
             var element, $scope, $q, $window;
             beforeEach(module('vitae.interests'));

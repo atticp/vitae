@@ -103,7 +103,7 @@ angular.module('vitae.timeline')
                                     .property('active', true)
                                     .on("click", function (d) {
                                         var active = this.active ? false : true;
-                                        d3.selectAll("g.timelineItem." + d.replace(/\s+/g, ''))
+                                        d3.selectAll(ele.find("g.timelineItem." + d.replace(/\s+/g, '')))
                                             .transition()
                                             .duration(500)
                                             .style("opacity", active ? 1 : 0);
@@ -172,6 +172,7 @@ angular.module('vitae.timeline')
                                 /* Timeline Point */
                                 items
                                     .append('line')
+                                    .attr('class', 'item-title-join')
                                     .attr('x1', xPos + 15)
                                     .attr('x2', itemXPos)
                                     .attr('y1', 0)
@@ -179,6 +180,7 @@ angular.module('vitae.timeline')
 
                                 items
                                     .append('circle')
+                                    .attr('class', 'item-title-point')
                                     .attr('r', 15)
                                     .attr('cx', xPos)
                                     .attr('cy', 0);
@@ -265,7 +267,7 @@ angular.module('vitae.timeline')
                                 var skillsGroup = items.append('g')
                                     .attr('class', 'skills');
 
-                                var skills = skillsGroup.selectAll('text.skill')
+                                var skills = skillsGroup.selectAll('g.skill')
                                     .data(function (d) {
                                         return d.skills;
                                     });
@@ -276,6 +278,7 @@ angular.module('vitae.timeline')
 
                                 skills
                                     .append('text')
+                                    .attr('class', 'skill')
                                     .each(function (d) {
                                         d3UtilsService.wrapSVGText(d3.select(this), {
                                             caption: d,
@@ -287,6 +290,7 @@ angular.module('vitae.timeline')
                                     });
 
                                 skills.append('circle')
+                                    .attr('class', 'bullet')
                                     .attr('r', 3)
                                     .attr('cx', 0)
                                     .attr('cy', 0)
@@ -358,4 +362,4 @@ angular.module('vitae.timeline')
                     });
                 }
             };
-        }]);
+                }]);
