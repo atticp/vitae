@@ -120,11 +120,11 @@ The `interests` section of the vitae json is an array of interest objects.
 "interests": [
         {
             "title": "Interest 1",
-            "img": "glyphicons_329_soccer_ball.png"
+            "img": "interest-1.png"
       },
         {
             "title": "Interest 2",
-            "img": "glyphicons_314_table_tennis.png"
+            "img": "interest-2.png"
       },
         ...
    ]

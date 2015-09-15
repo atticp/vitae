@@ -15,6 +15,8 @@ module.exports = function (config) {
 
         // list of files / patterns to load in the browser
         files: [
+            'assets/d3/d3.js',
+            'assets/jquery/dist/jquery.js',
             'assets/angular/angular.js',
             'assets/angular-mocks/angular-mocks.js',
             'src/**/module.js',
@@ -39,7 +41,6 @@ module.exports = function (config) {
         // possible values: 'dots', 'progress'
         // available reporters: https://npmjs.org/browse/keyword/karma-reporter
         reporters: ['spec', 'coverage'],
-
 
         // web server port
         port: 9876,

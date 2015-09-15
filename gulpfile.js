@@ -41,7 +41,7 @@ gulp.task('js', ['templates'], function () {
 });
 
 gulp.task('js-min', ['js'], function () {
-    return gulp.src('./dist/js/vitae.js')
+    return gulp.src('./build/release/js/vitae.js')
         .pipe(rename('vitae.min.js'))
         .pipe(ngAnnotate())
         .pipe(uglify())
