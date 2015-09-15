@@ -1,3 +1,4 @@
 node_modules
 assets
 build/coverage
+build/release/js/vitae.min.js

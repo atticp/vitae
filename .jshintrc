@@ -22,8 +22,10 @@
     "trailing": true,
     "undef": true,
     "unused": true,
+    "browser": true,
     "globals": {
-        "expect": true
+        "expect": true,
+        "$": false
     },
     "predef": [
       "afterEach",
@@ -36,7 +38,6 @@
       "inject",
       "it",
       "jasmine",
-      "protractor",
-      "sinon"
+        "d3"
     ]
 }
